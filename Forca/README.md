@@ -24,6 +24,7 @@ Tuanne
 ### Linguagem Ruby
 Isaac
 Elizangela
+Giovani
 
 
 ## Regras do jogo da forca
