@@ -8,12 +8,23 @@ Cada grupo deverá realizar um **fork** ou **clone** deste repositório e em uma
 ## Grupos
 
 ### Linguagem C/C++
+Jeferson
+Samuel
+Thiago
 
 ### Linguagem Java
+Rodrigo
+Luis
+Henrique
 
 ### Linguagem Python
+João Marcelo
+Tuanne
 
 ### Linguagem Ruby
+Isaac
+Elizangela
+
 
 ## Regras do jogo da forca
 
