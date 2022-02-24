@@ -1,5 +1,8 @@
-banana
+abacate
+Uma fruta
 melancia
-cereja
-morango
-lemniscata
+Uma fruta
+futebol
+Um esporte
+basquete
+Um esporte

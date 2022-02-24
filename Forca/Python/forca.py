@@ -47,23 +47,34 @@ def imprime_mensagem_abertura():
 def carrega_palavra_secreta():
 
     # *** abre e fecha o arquivo mesmo se der erro ***
-    #    with open('palavras.txt') as arquivo:
-    #        for linha in arquivo:
-    #            print(linha)
+    # with open('palavras.txt') as arquivo:
+    # for linha in arquivo:
+    # print(linha)
 
     arquivo = open('palavras.txt', 'r')
     lista_palavras = []
+    # lista_dica = []
 
     for item in arquivo:
         item = item.strip()
         lista_palavras.append(item)
+        # print(lista_palavras)
 
     arquivo.close()
 
     index_palavra = random.randrange(0, len(lista_palavras))
 
+    if (index_palavra % 2) == 0:
+        index_palavra = index_palavra
+    else:
+        index_palavra -= 1
+
+    index_dica = index_palavra + 1
+
     palavra_secreta = lista_palavras[index_palavra].upper()
-    # print(lista_palavras[index_palavra].upper())
+    dica_secreta = lista_palavras[index_dica].upper()
+    # print(palavra_secreta)
+    print('Dica:', dica_secreta)
     return palavra_secreta
 
 
