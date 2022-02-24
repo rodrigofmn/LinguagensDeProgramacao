@@ -56,25 +56,22 @@ def carrega_palavra_secreta():
     # lista_dica = []
 
     for item in arquivo:
-        item = item.strip()
-        lista_palavras.append(item)
+        # item = item.strip()
+        lista_palavras.append(item.strip())
         # print(lista_palavras)
 
     arquivo.close()
 
-    index_palavra = random.randrange(0, len(lista_palavras))
+    palavras = lista_palavras[::2]
+    dicas = lista_palavras[1::2]
 
-    if (index_palavra % 2) == 0:
-        index_palavra = index_palavra
-    else:
-        index_palavra -= 1
+    index = random.randrange(0, len(palavras))
 
-    index_dica = index_palavra + 1
-
-    palavra_secreta = lista_palavras[index_palavra].upper()
-    dica_secreta = lista_palavras[index_dica].upper()
+    palavra_secreta = palavras[index].upper()
+    dica_secreta = dicas[index].upper()
     # print(palavra_secreta)
     print('Dica:', dica_secreta)
+
     return palavra_secreta
 
 
