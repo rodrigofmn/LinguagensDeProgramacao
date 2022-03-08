@@ -40,7 +40,7 @@ def jogar():
 
 def imprime_mensagem_abertura():
     print('***************************')
-    print('Bem-viado ao jogo de forca!')
+    print('Bem-vindo ao jogo de forca!')
     print('***************************')
 
 
