@@ -28,6 +28,7 @@ def jogar():
                 index += 1
         else:
             erros += 1
+            print(f'\nVocê errou, restam mais {6 - erros} tentativas\n')
         enforcou = erros == 6
         acertou = '_' not in letras_acertadas
         print(letras_acertadas)
@@ -40,8 +41,9 @@ def jogar():
 
 def imprime_mensagem_abertura():
     print('***************************')
-    print('Bem-viado ao jogo de forca!')
+    print('Bem-vinda(o) ao jogo de forca!')
     print('***************************')
+    print('\nVocê tem 6 tentativas para descobrir a palavra secreta!\n')
 
 
 def carrega_palavra_secreta():
