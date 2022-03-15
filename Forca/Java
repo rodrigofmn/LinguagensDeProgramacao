@@ -1,0 +1,94 @@
+package hangmangame;
+import java.util.*;
+public class jogoforca {
+
+public static void main(String [] args){
+
+
+String storedword;
+char[] charstring;
+int length;
+char[] censor;
+int attempts=0;
+int mistake=0;
+int erro1 = 0;
+
+StringBuilder pastguesses = new StringBuilder();
+Scanner typedword = new Scanner(System.in);
+System.out.println("Insira a palavra a se acertar: ");
+storedword = typedword.nextLine();
+storedword = storedword.toUpperCase();
+length = storedword.length();
+
+charstring = storedword.toCharArray(); 
+
+
+censor = storedword.toCharArray();
+System.out.println("A sua palavra secreta e: ");
+
+for (int index = 0; index < length; index++){
+censor[index] = '*';
+}
+
+
+while (String.valueOf(censor).equals(storedword)== false){
+
+
+char charguess;
+String tempword;
+String tempstring;
+boolean correct = false;
+int times = 0;
+boolean repeated = false;
+
+
+for(int a= 0; a < length; a++){
+System.out.print(censor[a]);
+}
+System.out.println();
+
+
+Scanner guess = new Scanner(System.in);
+System.out.println("escreva a sua letra: ");
+tempword = guess.next();
+charguess = tempword.charAt(0);
+
+pastguesses.append(charguess);
+tempstring = pastguesses.toString();
+
+
+if (tempstring.lastIndexOf(charguess, tempstring.length() -2 ) != -1){
+System.out.println("Você já tentou essa letra! Tente outra. A sua ultima tentativa foi: ");
+pastguesses.deleteCharAt(tempstring.length()-1);
+System.out.println(tempstring.substring(0, tempstring.length()-1));
+repeated = true;
+}
+
+
+if (repeated == false){
+for (int index = 0; index < length; index++){
+
+if(charstring[index] == Character.toUpperCase(charguess)) {
+
+censor[index] = Character.toUpperCase(charguess);
+correct = true;
+times++;
+}
+}
+if(correct == true){
+System.out.println("A letra " + charguess + " está contida na plavra! E aparece " + times +" " + charguess + " na palavra. A letras presentes são: ");
+}
+
+else if (correct == false){
+erro1 = erro1 + 1;
+System.out.println("Tente novamente, essa letra nao pertence a palavra "+ erro1 +". A sua palavra e : ");
+}
+System.out.println();
+}
+attempts++;
+}
+System.out.println("Voce acertou a palavra "+ storedword.toUpperCase() + " e levou a voce " + attempts + " tentativas!");
+
+
+}
+}
